@@ -1,0 +1,51 @@
+package scripts;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+
+import Driver.LaunchApplication;
+import commonclasses.PropertyRead;
+
+public class EditMarket extends LaunchApplication {
+	
+	public static String Editmarket(HashMap<String, String> hm)
+	{
+		try{
+			
+			System.out.println("You are in Create Market");
+			driver.get(PropertyRead.TestURL);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
+			
+			driver.findElement(By.id("element_button_3")).click();
+			driver.findElement(By.id("grid_column_7_clps_div")).click();
+			
+			driver.findElement(By.xpath("//p[.='Manage Markets']")).click();
+			
+			driver.findElement(By.xpath("//div[@id='page-body_undefined']/div/div[3]//div[@id='grid_column_6_clps_div']")).click();
+			
+			driver.findElement(By.id("element_inputbox_3")).sendKeys(hm.get("Market_Name"));
+			driver.findElement(By.id("element_inputbox_4")).sendKeys(hm.get("Currency"));
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return null;
+		
+	}
+
+}

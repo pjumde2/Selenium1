@@ -1,0 +1,17 @@
+package scripts;
+
+import java.util.HashMap;
+
+import Driver.LaunchApplication;
+
+public class MarketValidation extends LaunchApplication {
+	
+	public static String Marketvalidation(HashMap<String, String> hm)
+	{
+		
+		
+		return null;
+		
+	}
+
+}

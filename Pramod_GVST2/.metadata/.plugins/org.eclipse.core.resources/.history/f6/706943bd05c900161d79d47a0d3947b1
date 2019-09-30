@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SearchtemplateSubmit extends LaunchApplication{
+	
+	public static String Searchtemplatesubmit()
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

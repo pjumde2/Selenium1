@@ -1,0 +1,15 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SearchAddPropertyFullValuer extends LaunchApplication {
+	
+	public static String Searchaddpropertyfullvaluer()
+	{
+		
+		
+		return null;
+		
+	}
+
+}

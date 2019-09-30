@@ -1,0 +1,95 @@
+package scripts;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import commonclasses.PropertyRead;
+import Driver.LaunchApplication;
+
+public class CreateSupplier extends LaunchApplication {
+	
+	public static String CreateSupplier(HashMap<String, String> hm)
+	{
+		
+		try{
+			
+			System.out.println("You are in Create Supplier");
+			
+			driver.get(PropertyRead.TestURL);
+			driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
+			
+			driver.findElement(By.id("element_button_3")).click();
+			driver.findElement(By.id("grid_column_7_clps_div")).click();
+			
+						
+			driver.findElement(By.xpath("//p[.='Manage Suppliers']")).click();
+			
+			driver.findElement(By.xpath("//div[@id='page-body_undefined']/div/div[3]//div[@id='grid_column_6_clps_div']")).click();
+			
+			driver.findElement(By.id("supplierNameID")).sendKeys(hm.get("Supplier_Name"));
+			driver.findElement(By.id("tradingNameID")).sendKeys(hm.get("Trading_Name"));
+			driver.findElement(By.id("element_inputbox_3")).sendKeys(hm.get("Sort_Code"));
+			driver.findElement(By.id("element_inputbox_4")).sendKeys(hm.get("Account_Number"));
+			driver.findElement(By.id("element_inputbox_5")).sendKeys(hm.get("Email"));
+			driver.findElement(By.id("element_checkbox_1")).click();
+			
+			
+			
+			//List<WebElement> listOfLiElements = driver.findElements(By.xpath("//*[@id='ContentDivId_col_div']"));
+			
+		/*	
+			List<WebElement> listOfLiElements = driver.findElements(By.xpath("//*[@id='fgp_container_list_3_row_0']"));
+				//	findElement();
+			
+		//	element.click();
+			for(int i=0; i< listOfLiElements.size(); i++){
+				//listOfLiElements.get(i).click();
+				if(listOfLiElements.get(i).getText().equalsIgnoreCase("Manage Suppliers")){
+					listOfLiElements.get(i).findElement(By.xpath("//p[.='Manage Suppliers']")).click();;
+				//	listOfLiElements.get(i).click();	
+					break;
+				}
+				http://localhost:8080/Gvst/
+				*/
+		/*	for(int i=0; i< listOfLiElements.size(); i++){
+				//listOfLiElements.get(i).click();
+				if(listOfLiElements.get(i).getText().equalsIgnoreCase("Manage Markets")){
+					listOfLiElements.get(i).findElement(By.id("element_label_18"));
+					listOfLiElements.get(i).click();	
+					break;
+				}*/
+				
+			/*	
+				if(listOfLiElements.get(i).findElement(By.id("element_label_17")).getText() == "Manage Suppliers")
+				     {
+				      WebElement correctElement = listOfLiElements.get(i).findElement(By.id("element_label_17"));
+				      //i =listOfLiElements.;
+				      correctElement.click();
+				      System.out.println("done");
+				     }*/
+			//	 }
+			
+			//*[@id="element_label_17"]// id("fgp_container_list_3_row_0"))/By.className("alist")
+			
+			
+			
+			
+		}catch(Exception e)
+		
+		{
+			System.out.println(e.getMessage());
+		}
+		
+				return null;
+		
+		
+	}
+
+}

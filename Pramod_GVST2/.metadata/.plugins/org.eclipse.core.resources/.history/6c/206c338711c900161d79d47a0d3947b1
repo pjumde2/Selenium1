@@ -1,0 +1,15 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SearchtemplateAddproperty extends LaunchApplication {
+	
+	public static String Searchtemplateaddproperty()
+	{
+		
+		
+		return null;
+		
+	}
+
+}

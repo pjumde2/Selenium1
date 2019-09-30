@@ -1,0 +1,18 @@
+package scripts;
+
+import java.util.HashMap;
+
+import Driver.LaunchApplication;
+
+public class ReportPannelsummary extends LaunchApplication {
+	
+	public static String Reportpannelsummary(HashMap<String, String> hm)
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SupplierMarket extends LaunchApplication{
+	
+	public static String Suppliermarket()
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

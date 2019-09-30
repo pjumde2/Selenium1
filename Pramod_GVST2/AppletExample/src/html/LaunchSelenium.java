@@ -1,0 +1,64 @@
+package html;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class LaunchSelenium {
+	public static WebDriver driver;	
+public static void main (String [] args) throws InterruptedException {
+	
+	initialise("Chrome");
+	testApplet();
+	
+//	file:///C:/Pramod_IBM/AppletExample/src/html/Hello.html
+}
+private static void testApplet() throws InterruptedException {
+	// WebDriver myTestDriver = new FirefoxDriver();
+	driver.manage().window().maximize();
+	 driver.get("file:///C:/Pramod_IBM/AppletExample/src/html/Hello.html");
+     WebElement element = driver.findElement(By.name("q"));
+  // Enter something to search for
+     element.sendKeys("Cheese!");
+
+     // Now submit the form. WebDriver will find the form for us from the element
+     element.submit();
+	driver.navigate().to("file:///C:/Pramod_IBM/AppletExample/src/html/Hello.html");
+	 
+	 Thread.sleep(5000L);
+	 JavascriptExecutor js = (JavascriptExecutor) driver;
+	 js.executeScript("document.jsap.setText(document.forms[0].txt1.value);");
+	 
+	
+}
+public static void initialise(String browsername) {
+	// TODO Auto-generated method stub
+	if(browsername.equalsIgnoreCase("Chrome"))
+	{
+		System.setProperty("webdriver.chrome.driver", 
+				"C://chromedriver.exe");
+		driver=new ChromeDriver();
+	}
+	if(browsername.equalsIgnoreCase("InternetExplorer"))
+		{
+		System.setProperty("webdriver.InternetExplorer.driver", 
+				"C:\\Program Files\\Internet Explorer\\iexplore.exe");
+			driver=new InternetExplorerDriver();
+		}
+	if (browsername.equalsIgnoreCase("FireFox"))
+	{
+		 driver = new FirefoxDriver();
+		/*System.setProperty("webdriver.firefox.driver", 
+				"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+		driver=new FirefoxDriver();*/
+		
+	}
+
+}
+
+
+}

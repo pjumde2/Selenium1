@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class StartNewSearchSearchFullValuer extends LaunchApplication {
+	
+	public static String Startnewsearchsearchfullvaluer()
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

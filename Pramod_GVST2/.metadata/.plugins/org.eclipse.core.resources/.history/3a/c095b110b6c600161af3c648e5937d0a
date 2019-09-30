@@ -1,0 +1,97 @@
+package scripts;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
+
+import Driver.LaunchApplication;
+import Driver.ReadExcel;
+import commonclasses.PropertyRead;
+import commonclasses.TakeScreenShot;
+
+public class EditMarket extends LaunchApplication {
+	
+	public static String Editmarket(HashMap<String, String> hm)
+	{
+		try{
+			
+			System.out.println("You are in Edit Market");
+			
+			System.out.println("values in HashMap: "+hm);
+			String ActualResult="";
+			String ExpectedResult="";
+			String TestCaseId=hm.get("TC_ID").toString();
+			String TestCaseDesc=hm.get("TC_Desc").toString();
+			String classname=hm.get("ClassName").toString();
+			String return_result=null;	
+			String screenshot="Login";
+			screenshot=screenshot+TestCaseId;
+			
+			
+			driver.get(PropertyRead.TestURL);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
+			
+			driver.findElement(By.id("element_button_3")).click();
+			driver.findElement(By.id("grid_column_7_clps_div")).click();
+			
+			driver.findElement(By.xpath("//p[.='Manage Markets']")).click();
+			
+			Select market = new Select(driver.findElement(By.id("allMarketsId")));
+			market.selectByVisibleText(hm.get("Market_Name"));
+			
+			driver.findElement(By.xpath("//div[@id='page-body_undefined']/div/div[3]//div[@id='grid_column_6_clps_div']")).click();
+			
+			
+			if(hm.containsKey("New_Market_Name")&& (hm.get("New_Market_Name")!=null && hm.get("New_Market_Name")!=""))
+			{
+				driver.findElement(By.id("market__marketName")).clear();
+				driver.findElement(By.id("market__marketName")).sendKeys(hm.get("New_Market_Name"));
+				
+			}
+			
+			if(hm.containsKey("New_Currency")&& (hm.get("New_Currency")!=null && hm.get("New_Currency")!=""))
+			{
+				driver.findElement(By.id("market__currencySymbol")).clear();
+				driver.findElement(By.id("market__currencySymbol")).sendKeys(hm.get("New_Currency"));
+				System.out.println("New_Currency"+hm.containsValue("New_Currency")+"null"+hm.containsValue("New_Currency"));
+				
+			}
+			
+			driver.findElement(By.id("element_button_2")).click();
+			
+			ExpectedResult = "The Market has been updated";
+		    ActualResult= driver.findElement(By.xpath("//*[@id='grid_column_8_seccol_mdl_div']")).getText();
+            System.out.println("Message is:"+ActualResult);
+			
+			if(ActualResult.contains(ExpectedResult))
+			{
+				return_result="Pass"+","+TestCaseId+","+TestCaseDesc;
+				
+				System.out.println("Return Result is: "+return_result);
+				TakeScreenShot.TakecreenShotMethod(screenshot);
+				ReadExcel.Excel_Report_Generation(classname, return_result);
+			}
+			
+			else
+			{
+				return_result="Fail"+","+TestCaseId+","+TestCaseDesc;
+				System.out.println("Return Result is: "+return_result);
+				TakeScreenShot.TakecreenShotMethod(screenshot);
+				ReadExcel.Excel_Report_Generation(classname, return_result);
+			}
+			
+			
+			
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return null;
+		
+	}
+
+}

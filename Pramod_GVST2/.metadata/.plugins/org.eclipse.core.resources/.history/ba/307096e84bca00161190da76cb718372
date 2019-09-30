@@ -1,0 +1,15 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class ReportLamuser extends LaunchApplication{
+	
+	public static String Reportlamuser()
+	{
+		
+		
+		return null;
+		
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;scripts.Duplicatelocation.java&apos; to &apos;DuplicateLocation.java&apos;&#x0D;&#x0A;- Original project: &apos;Pramod_Barclay&apos;&#x0D;&#x0A;- Original element: &apos;scripts.Duplicatelocation.java&apos;&#x0D;&#x0A;- Renamed element: &apos;scripts.DuplicateLocation.java&apos;" description="Rename compilation unit &apos;Duplicatelocation.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;scripts{Duplicatelocation.java" name="DuplicateLocation.java" references="false" stamp="1482747995270" version="1.0"/>
+</session>

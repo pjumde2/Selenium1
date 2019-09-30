@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SearchFullValuerValidation extends LaunchApplication {
+
+	
+	public static String Searchfullvaluervalidation()
+	{
+		
+		
+		
+		return null;
+		
+	}
+}

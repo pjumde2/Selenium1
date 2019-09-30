@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SearchtemplateEmail extends LaunchApplication {
+	
+	public static String Searchtemplateemail()
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

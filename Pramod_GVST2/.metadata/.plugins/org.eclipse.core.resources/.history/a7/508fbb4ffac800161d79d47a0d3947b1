@@ -1,0 +1,18 @@
+package scripts;
+
+import java.util.HashMap;
+
+import Driver.LaunchApplication;
+
+public class StartNewSearchSearchFullValuer extends LaunchApplication {
+	
+	public static String Startnewsearchsearchfullvaluer(HashMap<String, String> hm)
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

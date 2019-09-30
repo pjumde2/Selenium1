@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SearchresubmitFullvaluer extends LaunchApplication {
+	
+	public static String Searchresubmitfullvaluer()
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class ReportSuppliermetrics extends LaunchApplication{
+	
+	public static String Reportsuppliermetrics()
+	{
+		
+		
+		return null;
+		
+	}
+
+}

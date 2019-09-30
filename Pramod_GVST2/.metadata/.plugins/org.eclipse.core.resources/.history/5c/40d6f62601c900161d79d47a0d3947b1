@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class Searchcopyroperty1Fullvalue extends LaunchApplication {
+	
+	public static String Searchcopyproperty1fullvalue()
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

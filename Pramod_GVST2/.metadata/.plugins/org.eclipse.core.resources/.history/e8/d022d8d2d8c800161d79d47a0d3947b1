@@ -1,0 +1,17 @@
+package scripts;
+
+import java.util.HashMap;
+
+import Driver.LaunchApplication;
+
+public class EditUser extends LaunchApplication {
+	
+	public static String Edituser(HashMap<String, String> hm)
+	{
+		
+		
+		return null;
+		
+	}
+
+}

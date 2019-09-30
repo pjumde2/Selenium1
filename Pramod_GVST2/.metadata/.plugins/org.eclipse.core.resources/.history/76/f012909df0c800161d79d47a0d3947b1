@@ -1,0 +1,16 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class CreateNewsEvents extends LaunchApplication {
+	
+	public static String Createnewsevents()
+	{
+		
+		
+		
+		return null;
+		
+	}
+
+}

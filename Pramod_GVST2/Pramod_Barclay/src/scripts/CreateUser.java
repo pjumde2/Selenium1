@@ -1,0 +1,92 @@
+package scripts;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
+
+import commonclasses.PropertyRead;
+import commonclasses.TakeScreenShot;
+import Driver.LaunchApplication;
+import Driver.ReadExcel;
+
+public class CreateUser extends LaunchApplication {
+	
+	public static String Createuser(HashMap<String, String> hm)
+	{
+		
+     try{			
+			
+			System.out.println("values in HashMap: "+hm);
+			String ActualResult="";
+			String ExpectedResult="";
+			String TestCaseId=hm.get("TC_ID").toString();
+			String TestCaseDesc=hm.get("TC_Desc").toString();
+			String classname=hm.get("ClassName").toString();
+			String return_result=null;	
+			String screenshot="CreateUser";
+			screenshot=screenshot+TestCaseId;
+			
+			driver.get(PropertyRead.TestURL);
+			driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
+			
+			driver.findElement(By.id("element_button_3")).click();
+			driver.findElement(By.id("grid_column_7_clps_div")).click();
+			
+						
+			driver.findElement(By.xpath("//*[@id='element_label_22']")).click();
+			
+			driver.findElement(By.xpath("//div[@id='page-body_undefined']/div/div[3]/div//div[@id='grid_column_5_clps_div']")).click();
+			driver.findElement(By.id("userId")).sendKeys(hm.get("User_id"));
+			driver.findElement(By.id("fnameId")).sendKeys(hm.get("First_Name"));
+			driver.findElement(By.id("lNameId")).sendKeys(hm.get("Last_Name"));
+			Select role = new Select(driver.findElement(By.id("roleId")));
+			role.selectByVisibleText(hm.get("Role"));
+			Select business = new Select(driver.findElement(By.id("bareaId")));
+			business.selectByVisibleText(hm.get("Business_Area"));
+			driver.findElement(By.id("emailId")).sendKeys(hm.get("Email"));
+			
+			driver.findElement(By.id("listComponent")).click();
+			
+			
+					
+			
+		
+			ExpectedResult="A new Supplier has been created";
+			ActualResult=driver.findElement(By.xpath("//*[@id='grid_column_10_seccol_mdl_div']")).getText();
+			
+			if(ActualResult.contains(ExpectedResult))
+			{
+				return_result="Pass"+","+TestCaseId+","+TestCaseDesc;
+				
+				System.out.println("Return Result is: "+return_result);
+				TakeScreenShot.TakecreenShotMethod(screenshot);
+				ReadExcel.Excel_Report_Generation(classname, return_result);
+			}
+			
+			else
+			{
+				return_result="Fail"+","+TestCaseId+","+TestCaseDesc;
+				System.out.println("Return Result is: "+return_result);
+				TakeScreenShot.TakecreenShotMethod(screenshot);
+				ReadExcel.Excel_Report_Generation(classname, return_result);
+			}
+			
+		
+			
+		}catch(Exception e)
+		
+		{
+			System.out.println(e.getMessage());
+		
+		
+		
+		
+	}
+		return null;
+		
+	}
+
+}

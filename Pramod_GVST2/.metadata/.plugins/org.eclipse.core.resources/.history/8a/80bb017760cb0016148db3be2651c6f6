@@ -1,0 +1,56 @@
+package scripts;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
+
+import commonclasses.PropertyRead;
+import Driver.LaunchApplication;
+
+public class RemoveLocation extends LaunchApplication{
+
+	public static String Removelocation(HashMap<String, String>hm)
+	{
+		try{
+			
+			System.out.println("values in HashMap: "+hm);
+			String ActualResult="";
+			String ExpectedResult="";
+			String TestCaseId=hm.get("TC_ID").toString();
+			String TestCaseDesc=hm.get("TC_Desc").toString();
+			String classname=hm.get("ClassName").toString();
+			String return_result=null;	
+			String screenshot="RemoveLocation";
+			screenshot=screenshot+TestCaseId;
+			
+			
+			driver.get(PropertyRead.TestURL);
+			driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
+			driver.findElement(By.id("element_button_3")).click();
+			driver.findElement(By.id("grid_column_7_clps_div")).click();
+			
+			driver.findElement(By.xpath("//p[.='Manage Locations']")).click();
+			
+			Select market = new Select(driver.findElement(By.id("allMarketsIdLocation")));
+			market.selectByVisibleText(hm.get("Markets"));
+			
+			Select location = new Select(driver.findElement(By.id("allMarketsLocationsId")));
+			location.selectByVisibleText(hm.get("Location_Name"));
+			
+			
+			
+			driver.findElement(By.xpath("//div[@id='page-body_undefined']/div/div[5]//div[@id='grid_column_10_clps_div']")).click();
+			driver.findElement(By.id("element_inputbox_3")).sendKeys("kl");
+			
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return null;
+		
+	}
+}

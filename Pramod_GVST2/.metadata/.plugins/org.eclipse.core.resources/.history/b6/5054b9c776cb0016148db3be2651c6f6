@@ -1,0 +1,15 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class ConfsystemValidation extends LaunchApplication {
+	
+	public static String Confsystemvalidation()
+	{
+		
+		
+		return null;
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package scripts;
+
+import java.util.HashMap;
+
+import Driver.LaunchApplication;
+
+public class ConfsystemValidation extends LaunchApplication {
+	
+	public static String Confsystemvalidation(HashMap<String, String> hm)
+	{
+		
+		
+		return null;
+		
+	}
+
+}

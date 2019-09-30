@@ -1,0 +1,15 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class SearchtemplateStartnewtemp extends LaunchApplication {
+	
+	public static String Searchtemplatestartnewtemp()
+	{
+		
+		
+		return null;
+		
+	}
+
+}

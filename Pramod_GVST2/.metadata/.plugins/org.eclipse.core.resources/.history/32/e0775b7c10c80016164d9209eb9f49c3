@@ -1,0 +1,17 @@
+package scripts;
+
+import java.util.HashMap;
+
+import Driver.LaunchApplication;
+
+public class ManageProperty extends LaunchApplication{
+	
+	public static String Manageproperty(HashMap<String, String> hm)
+	{
+		
+		
+		return null;
+		
+	}
+
+}

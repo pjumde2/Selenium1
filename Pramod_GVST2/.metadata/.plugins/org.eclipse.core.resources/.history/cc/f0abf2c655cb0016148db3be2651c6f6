@@ -1,0 +1,9 @@
+package scripts;
+
+import Driver.LaunchApplication;
+
+public class DuplicateLocation extends LaunchApplication {
+	
+	public static String Duplicatelocation
+
+}

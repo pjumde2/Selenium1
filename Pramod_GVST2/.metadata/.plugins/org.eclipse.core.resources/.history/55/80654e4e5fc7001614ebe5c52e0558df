@@ -1,0 +1,42 @@
+package scripts;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
+
+import commonclasses.PropertyRead;
+import Driver.LaunchApplication;
+
+public class RemoveMarket extends LaunchApplication {
+	
+	public static String Removemarket(HashMap<String, String>hm)
+	{
+		try{
+			
+			driver.get(PropertyRead.TestURL);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
+			
+			driver.findElement(By.id("element_button_3")).click();
+			driver.findElement(By.id("grid_column_7_clps_div")).click();
+			
+			driver.findElement(By.xpath("//p[.='Manage Markets']")).click();
+			
+			Select market = new Select(driver.findElement(By.id("allMarketsId")));
+			market.selectByVisibleText(hm.get("Market_Name"));
+			
+			
+			
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		
+		return null;
+		
+	}
+
+}

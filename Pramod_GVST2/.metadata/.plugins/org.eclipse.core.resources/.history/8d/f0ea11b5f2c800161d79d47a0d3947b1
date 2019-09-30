@@ -1,0 +1,17 @@
+package scripts;
+
+import java.util.HashMap;
+
+import Driver.LaunchApplication;
+
+public class UpdateNewsEvents extends LaunchApplication {
+	
+	public static String Updatenewsevents(HashMap<String, String> hm)
+	{
+		
+				
+		return null;
+		
+	}
+
+}
